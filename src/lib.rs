@@ -88,8 +88,8 @@ impl DoublePendulam {
     }
 
     fn new_vel(&mut self){
-        self.v1 += self.acc1;
-        self.v2 += self.acc2;
+        self.v1 += 0.2*self.acc1;
+        self.v2 += 0.2*self.acc2;
 
         // todo: add a parameter and setter method for dampening constant. 
         self.v1 *= 1.0 - self.damp_factor;
@@ -124,7 +124,18 @@ impl DoublePendulam {
         return obj;
     }
 
-
+    pub fn m1(&self) -> f64{
+        return self.m1;
+    }
+    pub fn m2(&self) -> f64{
+        return self.m2;
+    }
+    pub fn l1(&self) -> f64{
+        return self.l1;
+    }
+    pub fn l2(&self) -> f64{
+        return self.l2;
+    }
 }
 
 impl std::fmt::Display for Point {
