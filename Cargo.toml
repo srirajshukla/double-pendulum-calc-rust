@@ -1,9 +1,14 @@
 [package]
-name = "double-pendulam"
+name = "double-pendulum"
 version = "0.1.0"
-authors = ["srirajshukla <srirajshukla@gmail.com>"]
+authors = ["Gyanendra Shukla <srirajshukla@gmail.com>"]
 edition = "2018"
+license = "MIT"
+description = "A mathematical model for double pendulums."
+repository = "https://github.com/srirajshukla/double-pendulum-calc-rust"
 
+keywords = ["visualization", "simulation", "modeling", "pendulums", "double pendulum"]
+categories = ["data-structures", "mathematics"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
