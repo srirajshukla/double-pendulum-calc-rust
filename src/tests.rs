@@ -1,11 +1,11 @@
 #[cfg(test)]
 mod tests {
     use crate::Point;
-    use crate::DoublePendulam;
+    use crate::DoublePendulum;
     #[test]
     fn dp (){
         let pi = std::f64::consts::PI;
-        let p = DoublePendulam::new(10.0, 10.0, 0.0, pi/2.0, 50.0, 50.0, 0.01);
+        let p = DoublePendulum::new(10.0, 10.0, 0.0, pi/2.0, 50.0, 50.0, 0.01);
 
         let joint = p.get_joint();
         assert_eq!(joint.x, 0.0);

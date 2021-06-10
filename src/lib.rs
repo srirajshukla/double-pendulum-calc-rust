@@ -32,7 +32,7 @@ impl Point {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
-pub struct DoublePendulam {
+pub struct DoublePendulum {
     m1: f64,
     m2: f64,
     a1: f64,
@@ -49,7 +49,7 @@ pub struct DoublePendulam {
     damp_factor: f64,
 }
 
-impl DoublePendulam {
+impl DoublePendulum {
     pub fn get_joint(&self) -> Point{
         Point::new(self.c1.x, self.c1.y)
     }
@@ -104,7 +104,7 @@ impl DoublePendulam {
     }
 
     pub fn new(m1: f64, m2: f64, a1: f64, a2: f64, l1: f64, l2: f64, damp_factor: f64) -> Self {
-        let mut obj = DoublePendulam {
+        let mut obj = DoublePendulum {
             m1,
             m2,
             a1,
