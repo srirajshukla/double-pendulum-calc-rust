@@ -2,6 +2,8 @@ use std::fmt::Formatter;
 mod tests;
 
 #[derive(Debug, Copy, Clone, PartialEq)]
+/// A struct that represents a single Point
+/// with x and y coordinates
 pub struct Point {
     x: f64,
     y: f64,
@@ -32,6 +34,20 @@ impl Point {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
+/// A Struct that represents a Double Pendulum System
+/// @params:
+///  - m1: mass of the first pendulum
+///  - m2: mass of the second pendulum
+///  - l1: length of the first pendulum
+///  - l2: length of the second pendulum
+///  - c1: center of mass of the first pendulum
+///  - c2: center of mass of the second pendulum
+///  - v1: starting velocity of the first pendulum
+///  - v2: starting velocity of the second pendulum
+///  - acc1: starting acceleration of the first pendulum
+///  - acc2: starting acceleration of the second pendulum
+///  - g: gravitational constant
+///  - damp_factor: damping factor of the system
 pub struct DoublePendulum {
     m1: f64,
     m2: f64,
@@ -96,6 +112,7 @@ impl DoublePendulum {
         self.v2 *= 1.0 - self.damp_factor;
     }
 
+    /// calculates the next state of the system
     pub fn new_pos(&mut self){
         self.new_vel();
         self.new_acc();
@@ -103,6 +120,9 @@ impl DoublePendulum {
         self.calc_pos();
     }
 
+    /// Function to make a new instance of DoublePendulum struct
+    /// with values m1, m2, l1, l2, c1, c2, v1, v2, acc1, acc2, g, damp_factor
+    /// Returns a DoublePendulum struct
     pub fn new(m1: f64, m2: f64, a1: f64, a2: f64, l1: f64, l2: f64, damp_factor: f64) -> Self {
         let mut obj = DoublePendulum {
             m1,
